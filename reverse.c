@@ -5,7 +5,7 @@ int main(void) {
 	// your code goes here
 	int n,r,rev=0,mul=10;
 	scanf("%d",&n);
-	if(n>0)
+	if(n>=0)
 	{
 	    do
 	    {
