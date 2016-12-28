@@ -15,6 +15,6 @@ int main() {
 	temp=num%power;
 	temp=temp*pow(10,i);
 	temp=temp+(num/power);
-	cout<<"\nThe reversed number: "<<temp;
+	cout<<"\nThe rotated number: "<<temp;
 	return 0;
 }
