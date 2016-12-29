@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <math.h>
 int main() 
 {
     int size=0,num,arr[20],temp,i,j;
@@ -11,6 +11,7 @@ int main()
         arr[size++]=num%10;
         num=num/10;
     }
+    int mul=pow(10,size-1);
     for(i=0;i<size;i++)
     {
         for(j=i+1;j<size;j++)        
@@ -22,12 +23,9 @@ int main()
                 arr[j]=temp;
             }
         }
-    }
-    for(i=0;i<size;i++)
-    {
-        num=(num*10)+arr[i];
+        num=num+(arr[i]*mul);
+        mul/=10;
     }
     printf("%d",num);
-
 	return 0;
 }
