@@ -1,6 +1,8 @@
 # ZohoEnrich
-#include<iostream.h>
-void main()
+#include <iostream.h>
+using namespace std;
+
+int main()
 {
     int num,temp,r,rev=0;
     cin>>num;
@@ -15,4 +17,5 @@ void main()
         cout<<"Palindrome";
    else 
         cout<<"Not Palindrome";
+    return 0;
 }
