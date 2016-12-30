@@ -1,14 +1,14 @@
 # ZohoEnrich
 #include<stdio.h>
-void main()
+int main()
 {
     char s[100];
-    int len=0;
+    int len=0,i;
     int flag=0;
     scanf("%s",&s);
-    for(int i=0;s[i]!='\0';i++);
+    for(i=0;s[i]!='\0';i++);
     len=i;
-    for(int i=0;i<=len/2;i++)
+    for(i=0;i<=len/2;i++)
     {
         if(s[i]!=s[(len-1)-i])
         {
@@ -19,10 +19,11 @@ void main()
     }
     if(flag==1)
     {
-        printf("Palindrome String");
+        printf(" not Palindrome String");
     }
     else
     {
         printf("Palindrome String");
     }
+    return 0;
 }
