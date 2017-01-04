@@ -42,7 +42,7 @@ int main() {
 	            t=-1;
 	        }
 	        if(arr[i-1][t+1]>=1&&arr[i-1][t+1]<=n*n)
-            {
+            	{
 	           i++;
 	           if(i>=n)
 	           {
