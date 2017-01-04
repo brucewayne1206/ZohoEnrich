@@ -5,14 +5,7 @@ int main() {
 	int n,i=0,j,cnt=1,t;
 	cin>>n;
 	j=n/2;
-	int arr[n][n];
-	for(int k=0;k<n;k++)
-	{
-	    for(int l=0;l<n;l++)
-	    {
-	        arr[k][l]=0;
-	    }
-	}
+	static int arr[n][n];
 	while(cnt<=n*n)
 	{
 	    cout<<i<<" "<<j<<"\n";
