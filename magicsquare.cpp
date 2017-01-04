@@ -1,4 +1,3 @@
-# ZohoEnrich
 #include <iostream.h>
 using namespace std;
 
@@ -7,13 +6,21 @@ int main() {
 	cin>>n;
 	j=n/2;
 	int arr[n][n];
+	for(int k=0;k<n;k++)
+	{
+	    for(int l=0;l<n;l++)
+	    {
+	        arr[k][l]=0;
+	    }
+	}
 	while(cnt<=n*n)
 	{
+	    cout<<i<<" "<<j<<"\n";
 	    arr[i][j]=cnt++;
 	    if(i-1<0)
 	    {
 	        t=j;
-	        if(j+1>=n)
+	        if(t+1==n)
 	        {
 	            t=-1;
 	        }
