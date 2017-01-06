@@ -8,7 +8,6 @@ int main() {
 	static int arr[n][n];
 	while(cnt<=n*n)
 	{
-	    cout<<i<<" "<<j<<"\n";
 	    arr[i][j]=cnt++;
 	    if(i-1<0)
 	    {
