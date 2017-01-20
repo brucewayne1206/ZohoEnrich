@@ -13,6 +13,7 @@ int subset(int n,int i,int j)
 		}
 		subset(n,i,j+1);
 	}
+	return 0;
 }
 int main()
 {
