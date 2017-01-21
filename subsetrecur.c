@@ -1,30 +1,33 @@
 # ZohoEnrich
 #include<stdio.h>
 #include<string.h>
-char arr[100];
-int subset(int n,int i,int j)
+int arr[100],n;
+int subset(int i,int j)
 {
 	int newsub=1<<j;
 	if(j<n)
 	{
 		if((i&newsub)!=0)
 		{
-			printf("%c ",arr[j]);
+			printf("%d ",arr[j]);
 		}
-		subset(n,i,j+1);
+		return subset(i,j+1);
 	}
 	return 0;
 }
 int main()
 {
-	scanf("%s",arr);
-	int size=strlen(arr);
-	int sub=1<<size;
+	scanf("%d",&n);
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	int sub=1<<n;
 	for(int i=0;i<sub;i++)
 	{
 		printf("{ ");
-		subset(size,i,0);
-		printf("}");
+		subset(i,0);
+		printf("}\n");
 	}
 	return 0;
 }
