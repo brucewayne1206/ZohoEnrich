@@ -12,9 +12,9 @@ int main() {
 	{
 	    a[i]=i+2;
 	}
-	for(i=0;(i<lim)&&(a[i]!=0);i++)
+	for(i=2;(i<lim)&&(a[i]!=0);i++)
 	{
-	    for(int j=i+1;j<size;j++)
+	    for(int j=i*i;j<size;j+=i)
 	    {
 	        if(a[j]==n)
 	        {
@@ -27,6 +27,6 @@ int main() {
 	    }
 	}
 	for(i=k+1;(i<size)&&(a[i]==0);i++);
-	cout<<a[i]<<" "<<i<<" "<<k;
+	cout<<a[i];
 	return 0;
 }
