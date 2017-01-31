@@ -19,6 +19,7 @@ void palindrome(int a[], int n)
 			if(a[j]==10)
 			{
 				a[j-1]++;
+				a[j]%=10;
 			}
 			a[i]=a[j];
 		}
@@ -27,6 +28,12 @@ void palindrome(int a[], int n)
 			a[mid-1]++;
 			a[mid]%=10;
 		}
+	
+		printf("\n");
+		for(int k=0;k<n;k++)
+		{
+			printf("%d ",a[k]);
+		}	
 	}
 	printf("\n");
 	for(i=0;i<n;i++)
