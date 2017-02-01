@@ -1,8 +1,7 @@
 # ZohoEnrich
 #include<stdio.h>
-#include<conio.h>
-#include <stdlib.h>
-#include <time.h>
+#include<stdlib.h>
+#include<time.h>
 void shell(int arr[4][4])
 {
     int i,j;
@@ -29,9 +28,8 @@ void shell(int arr[4][4])
 }
 int main()
 {
-	  clrscr();
 	  int arr[4][4];
-	  int i,j,cnt=0,m=0,n=0;
+	  int i,j,cnt=0,m,n;
 	  srand(time(NULL));
 	  int r[]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
           for (int i=15; i>0; i--)
@@ -46,6 +44,11 @@ int main()
 		  for(j=0;j<4;j++)
 		  {
 			  arr[i][j]=r[cnt++];
+			  if(arr[i][j]==0)
+			  {
+				m=i;
+				n=j;
+			  }	
 		  }
 	  }
 	  shell(arr);
@@ -53,34 +56,32 @@ int main()
 	  do
 	  {
 	     printf("\n\nU-up D-down L-left R-right Q-Quit\nEnter Your choice:");
-	     ch=getch();
-	     if((ch=='u'||ch=='U')&&(m!=3))
+	     scanf("%c",&ch);
+	     if((ch=='d'||ch=='D')&&(m!=3))
 	     {
 	        arr[m][n]=arr[m+1][n];
 	        m++;
 		      arr[m][n]=0;
 	     }
-	     if((ch=='d'||ch=='D')&&(m!=0))
+	     if((ch=='u'||ch=='U')&&(m!=0))
 	     {
 	        arr[m][n]=arr[m-1][n];
 	        m--;
 		      arr[m][n]=0;
 	     }
-	     if((ch=='l'||ch=='L')&&(n!=3))
+	     if((ch=='r'||ch=='R')&&(n!=3))
 	     {
 	        arr[m][n]=arr[m][n+1];
 	        n++;
 		      arr[m][n]=0;
 	     }
-	     if((ch=='r'||ch=='R')&&(n!=0))
+	     if((ch=='l'||ch=='L')&&(n!=0))
 	     {
 	        arr[m][n]=arr[m][n-1];
 	        n--;
 		      arr[m][n]=0;
 	     }
-	     clrscr();
 	     shell(arr);
 	  }while(ch!='Q'&&ch!='q');
-	  clrscr();
 	  return 0;
 }
