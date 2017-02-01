@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<conio.h>
 void shell(int arr[4][4])
 {
     int i,j;
@@ -47,6 +48,7 @@ int completion(int arr[4][4])
 }
 int main()
 {
+	  clrscr();
 	  int arr[4][4];
 	  int i,j,cnt=0,m,n;
 	  srand(time(NULL));
@@ -78,29 +80,30 @@ int main()
 	     scanf("%c",&ch);
 	     if((ch=='d'||ch=='D')&&(m!=3))
 	     {
-	        arr[m][n]=arr[m+1][n];
-	        m++;
-		      arr[m][n]=0;
+	        	arr[m][n]=arr[m+1][n];
+	        	m++;
+		      	arr[m][n]=0;
 	     }
 	     if((ch=='u'||ch=='U')&&(m!=0))
 	     {
-	        arr[m][n]=arr[m-1][n];
-	        m--;
-		      arr[m][n]=0;
+	        	arr[m][n]=arr[m-1][n];
+	        	m--;
+		      	arr[m][n]=0;
 	     }
 	     if((ch=='r'||ch=='R')&&(n!=3))
 	     {
-	        arr[m][n]=arr[m][n+1];
-	        n++;
-		      arr[m][n]=0;
+	        	arr[m][n]=arr[m][n+1];
+	        	n++;
+		      	arr[m][n]=0;
 	     }
 	     if((ch=='l'||ch=='L')&&(n!=0))
 	     {
-	        arr[m][n]=arr[m][n-1];
-	        n--;
-		      arr[m][n]=0;
+	        	arr[m][n]=arr[m][n-1];
+	        	n--;
+		      	arr[m][n]=0;
 	     }
 	     shell(arr);
+	     clrscr();
 	     completion(arr);
 	  }while(ch!='Q'&&ch!='q');
 	  return 0;
