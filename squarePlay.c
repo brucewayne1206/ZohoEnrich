@@ -26,6 +26,25 @@ void shell(int arr[4][4])
     }
     printf("\n---------------------");
 }
+int completion(int arr[4][4])
+{
+	  int flag=1;
+	  for(int i=0;i<4;i++)
+	  {
+		  for(int j=0;j<4;j++)
+		  {
+			  if(arr[i][j]==flag)
+			  {
+				flag++;
+			  }	
+		  }
+	  }
+	  if(flag==16)
+	  {
+		exit(0);
+	  }
+	  return 0;
+}
 int main()
 {
 	  int arr[4][4];
@@ -82,6 +101,7 @@ int main()
 		      arr[m][n]=0;
 	     }
 	     shell(arr);
+	     completion(arr);
 	  }while(ch!='Q'&&ch!='q');
 	  return 0;
 }
