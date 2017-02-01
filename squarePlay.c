@@ -102,8 +102,8 @@ int main()
 	        	n--;
 		      	arr[m][n]=0;
 	     }
-	     shell(arr);
 	     clrscr();
+	     shell(arr);
 	     completion(arr);
 	  }while(ch!='Q'&&ch!='q');
 	  return 0;
