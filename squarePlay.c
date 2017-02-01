@@ -1,6 +1,8 @@
 # ZohoEnrich
 #include<stdio.h>
 #include<conio.h>
+#include <stdlib.h>
+#include <time.h>
 void shell(int arr[4][4])
 {
     int i,j;
@@ -30,11 +32,20 @@ int main()
 	  clrscr();
 	  int arr[4][4];
 	  int i,j,cnt=0,m=0,n=0;
+	  srand(time(NULL));
+	  int r[]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+          for (int i=15; i>0; i--)
+          {
+        	int j=rand()%(i+1);
+        	int t=r[i];
+        	r[i]=r[j];
+        	r[j]=t;
+    	  }
 	  for(i=0;i<4;i++)
 	  {
 		  for(j=0;j<4;j++)
 		  {
-			  arr[i][j]=cnt++;
+			  arr[i][j]=r[cnt++];
 		  }
 	  }
 	  shell(arr);
