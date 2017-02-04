@@ -1,8 +1,20 @@
-# ZohoEnrich
 #include<stdio.h>
+int isprime(int m,int n)
+{
+	int i;
+	for(i=6;i<(n/2);i+=6)
+	{
+		//printf("\n %d %d - %d %d",i-1,i+1,m1,m2);
+		if(m%(i-1)==0||m%(i+1)==0)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
 int main()
 {
-	int n,m,i,flag=2;
+	int n,m,j,flag=0;
 	scanf("%d",&n);
 	if(n==2)
 	{
@@ -15,31 +27,24 @@ int main()
 		return 0;
 	}
 	m=(6-(n%6))+n;
-	n/=2;
-	int m1=m-1;
-	int m2=m+1;
-	//printf("\n%d",m);
-	for(i=6;i<n;i+=6)
+	printf("\n%d",n);
+	for(j=m;j>0;j+=6)
 	{
-		//printf("\n %d %d - %d %d",i-1,i+1,m1,m2);
-		if(m1%(i-1)==0||m1%(i+1)==0||(m1%2==0)||(m1%3)==0)
+		flag=0;
+		int m1=j-1;
+		int m2=j+1;
+		int flag=isprime(m1,n);
+		if(flag!=0)
 		{
-			flag=1;
+			printf("The next prime is: %d",m1);
 			break;
 		}
-		if(m2%(i-1)==0||m2%(i+1)==0||(m2%2==0)||(m2%3)==0)
+		flag=isprime(m2,n);
+		if(flag!=0)
 		{
-			flag=2;
+			printf("The next prime is: %d",m2);
 			break;
 		}
-	}
-	if(flag==1)
-	{
-		printf("The next prime is: %d",m2);
-	}
-	else
-	{
-		printf("The next prime is: %d",m1);
 	}
 	return 0;
 }
