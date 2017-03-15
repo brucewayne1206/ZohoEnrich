@@ -59,4 +59,5 @@ int main()
         }
         
     }while(ch==1||ch==2);
+    return 0;
 }
