@@ -1,12 +1,12 @@
 #include<stdio.h>
-struct node 
+struct list 
 {
    int data;
-   struct node *next;
-};
+   struct list *next;
+}node;
 
-struct node *h = NULL;
-struct node *p = NULL;
+node *h = NULL;
+node *p = NULL;
 
 void insert(int n) 
 {
