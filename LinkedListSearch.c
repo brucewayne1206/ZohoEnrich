@@ -1,41 +1,60 @@
 #include<stdio.h>
-struct list 
+#include<stdlib.h>
+struct node 
 {
    int data;
-   struct list *next;
-}node;
+   struct node *next;
+};
 
-node *h = NULL;
-node *p = NULL;
+struct node *h =(struct node*)malloc(sizeof(struct node*));
 
 void insert(int n) 
 {
+    //if(h==NULL){
+    //    h->data=n;
+   //     h->next=NULL;
+   // }
+    //else{
+    struct node *p =(struct node*)malloc(sizeof(struct node*));
+    
    p->data = n;
    p->next = h;
-   h = p;
+   
+    //return p;
+    h=p;
+    //}
+    
+    //if(h->next==NULL)
+    //printf("\nHI");
+    //else
+    //printf("%d",h->next->data);
+    //printf("%d",h->next->data);
 }
 
 int find(int n)
 {
+    struct node *p =(struct node*)malloc(sizeof(struct node*));
     p=h;
-    int cnt=0;
-    while(p->next==NULL)
+    int cnt=-1;
+    //printf("%d",p->data);
+    while(p!=NULL)
     {
         cnt++;
-        if(cnt==n)
+        //printf("%d",p->data);
+        if(p->data==n)
         {
-            p=p->next;
-            printf("\nThe Value is: %d",p->data);
-            return 1;
+            return cnt;
         }
         p=p->next;
     }
-    return 0;
+    
+    return cnt;
 }
 int main()
 {
-    int ch,n,ind,cnt=0;
-	  printf("\n1. Create node\n2. Print Details\n Enter Choice: ");
+    int ch,n,ind;
+    h=NULL;
+	printf("\n1. Create node\n2. Print index\n Enter Choice: ");
     do
     {
         scanf("%d",&ch);
@@ -43,20 +62,20 @@ int main()
         {
             int d;
             scanf("%d",&d);
-            cnt++;
             insert(d);
         }
         else if(ch==2)
         {
-            printf("Enter the number to be searched: ");
+            printf("Enter the number to e searched: ");
             scanf("%d",&n);
-            if(n>cnt-1||n<0)
+            ind = find(n);
+            if(ind == -1)
             {
-                printf("\n Enter valid data");
+                printf("\nData not Found");
             }
             else
             {
-                find(n);
+                printf("\nIndex : %d",ind);
             }
         }
         
